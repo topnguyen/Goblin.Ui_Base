@@ -1,0 +1,21 @@
+@using Elect.Web.HttpUtils
+@using Elect.Web.Models
+@{
+    var referer = Context.Request.Headers[HeaderKey.Referer].ToString()?.Trim('/');
+
+    var domain = Context.Request.GetDomain()?.Trim('/');
+
+    var isReload = referer?.StartsWith(domain) != true;
+}
+
+<html>
+<head>
+    <title>Title Oh Yeah</title>
+</head>
+<body class="document-body">
+<div id="document-content">
+    Oh Yeah
+    @RenderBody()
+</div>
+</body>
+</html>
