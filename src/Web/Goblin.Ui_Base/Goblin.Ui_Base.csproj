@@ -63,7 +63,4 @@
         <ProjectReference Include="..\..\Repository\Goblin.Ui_Base.Contract.Repository\Goblin.Ui_Base.Contract.Repository.csproj" />
         <ProjectReference Include="..\..\Repository\Goblin.Ui_Base.Repository\Goblin.Ui_Base.Repository.csproj" />
     </ItemGroup>
-    <ItemGroup>
-      <Folder Include="wwwroot" />
-    </ItemGroup>
 </Project>

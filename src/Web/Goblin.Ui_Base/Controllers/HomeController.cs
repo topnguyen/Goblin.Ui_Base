@@ -10,5 +10,12 @@ namespace Goblin.Ui_Base.Controllers
         {
             return View();
         }
+        
+        [Route("~/about-us")]
+        [HttpGet]
+        public IActionResult AboutUs()
+        {
+            return View();
+        }
     }
 }
