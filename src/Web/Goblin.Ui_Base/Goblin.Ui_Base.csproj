@@ -13,7 +13,7 @@
 
         <!-- UI -->
         <AddRazorSupportForMvc>true</AddRazorSupportForMvc>
-        <EnableDefaultContentItems>false</EnableDefaultContentItems>
+        <EnableDefaultContentItems>true</EnableDefaultContentItems>
 
         <!-- Mvc Razor Compile -->
         <RazorCompileOnPublish>true</RazorCompileOnPublish>
@@ -25,29 +25,20 @@
             So, to use Razor pages, you need to set preserveCompilationContext, which then includes all the necessary files in the published output.
             If you don't need runtime compilation, you don't have to set preserveCompilationContext.
         -->
-        <PreserveCompilationContext>false</PreserveCompilationContext>
+        <PreserveCompilationContext>true</PreserveCompilationContext>
 
         <!-- Output -->
         <OutputPath>.\bin\</OutputPath>
         <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
         <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+        <CopyRefAssembliesToPublishDirectory>false</CopyRefAssembliesToPublishDirectory>
     </PropertyGroup>
     <!-- Copy to Output -->
     <ItemGroup>
-        <Content Include="Goblin.Ui_Base.xml;appsettings.json">
+        <Content Include="Goblin.Ui_Base.xml">
             <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
         </Content>
-
-        <!-- UI -->
-        <!-- No need to copy Views folder to Build/Publish due to it will Complied by the above config -->
-        <!-- <Content Include="Views\**\*">-->
-        <!--     <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>-->
-        <!-- </Content>-->
-        <Content Include="wwwroot\**\*">
-            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-        </Content>
-        <Content Remove="wwwroot\**\*.scss" />
-        <Content Remove="wwwroot\node_modules\**\*" />
+        <Content Remove="wwwroot\**\*.scss"/>
     </ItemGroup>
     <ItemGroup>
         <ProjectReference Include="..\..\..\Goblin.Core\Goblin.Core.Web\Goblin.Core.Web.csproj" />
