@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Goblin.Ui_Base.Repository.Migrations
 {
     [DbContext(typeof(GoblinDbContext))]
-    [Migration("20200627012822_Initial")]
+    [Migration("20200627150228_Initial")]
     partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

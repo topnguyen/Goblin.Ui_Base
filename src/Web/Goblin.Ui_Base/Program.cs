@@ -1,5 +1,7 @@
 ﻿using System.Threading.Tasks;
+using Goblin.Ui_Base.Contract.Service;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace Goblin.Ui_Base
 {
@@ -12,11 +14,9 @@ namespace Goblin.Ui_Base
                     webHostBuilder.UseStartup<Startup>();
                 }, scope =>
                 {
-                    // Initial Database
-                    //
-                    // var infrastructureBootstrapper = scope.ServiceProvider.GetService<IBootstrapper>();
-                    //
-                    // infrastructureBootstrapper.InitialAsync().Wait();
+                    var infrastructureBootstrapper = scope.ServiceProvider.GetService<IBootstrapperService>();
+                    
+                    infrastructureBootstrapper.InitialAsync().Wait();
                 }
             );
         }
