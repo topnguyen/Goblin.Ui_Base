@@ -4,7 +4,7 @@ using Goblin.Ui_Base.Contract.Repository.Models;
 
 namespace Goblin.Ui_Base.Repository.Maps
 {
-    public abstract class EntityTypeConfiguration<T> : TypeConfiguration<T> where T : GoblinEntity
+    public class GoblinEntityMap<T> : TypeConfiguration<T> where T : GoblinEntity
     {
         public override void Map(EntityTypeBuilder<T> builder)
         {

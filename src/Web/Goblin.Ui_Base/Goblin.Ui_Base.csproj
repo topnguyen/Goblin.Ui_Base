@@ -32,17 +32,16 @@
         <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
         <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
         <CopyRefAssembliesToPublishDirectory>false</CopyRefAssembliesToPublishDirectory>
+        <DisableImplicitComponentsAnalyzers>true</DisableImplicitComponentsAnalyzers>
     </PropertyGroup>
     <!-- Copy to Output -->
     <ItemGroup>
         <Content Include="Goblin.Ui_Base.xml">
             <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
         </Content>
-        <Content Remove="wwwroot\**\*.scss"/>
+        <Content Remove="wwwroot\**\*.scss" />
     </ItemGroup>
     <ItemGroup>
-        <ProjectReference Include="..\..\..\Goblin.Core\Goblin.Core.Web\Goblin.Core.Web.csproj" />
-        
         <ProjectReference Include="..\..\Cross\Goblin.Ui_Base.Core\Goblin.Ui_Base.Core.csproj" />
         <ProjectReference Include="..\..\Cross\Goblin.Ui_Base.Mapper\Goblin.Ui_Base.Mapper.csproj" />
         
