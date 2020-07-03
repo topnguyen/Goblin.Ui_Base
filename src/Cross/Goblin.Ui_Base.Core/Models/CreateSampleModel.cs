@@ -3,7 +3,7 @@ using Goblin.Core.Models;
 
 namespace Goblin.Ui_Base.Core.Models
 {
-    public class CreateSampleModel : GoblinApiRequestModel
+    public class CreateSampleModel : GoblinApiSubmitRequestModel
     {
         [Required]
         public string SampleData { get; set; }
